@@ -11,7 +11,7 @@ let score = 0
 
 let setIntervalCountTime;
 
-const {min, max} = {min: 30, max: 100}
+const {min, max} = {min: 20, max: 70}
 
 buttonStartGame.addEventListener('click', (event) =>{
 	if (countVh != -100) {
