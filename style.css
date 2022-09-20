@@ -169,7 +169,7 @@ button {
 }
 
 @media (max-width: 469px) {
-  button {
+  .btn {
     width: 90px;
   }
 }
