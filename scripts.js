@@ -3,7 +3,7 @@ const screensArr = document.querySelectorAll('.screen')
 const buttonTimer = document.querySelector('.screen-container_btn')
 const board = document.querySelector('.board')
 const circle = document.createElement('img')
-circle.setAttribute('src', 'Новый проект.png')
+circle.setAttribute('src', 'HED.png')
 
 let timeGame = 0;
 let countVh = 0
@@ -58,7 +58,7 @@ function circleClick(event) {
 }
 function drawCircle() {
 
-	randomize(min, max)
+	randomize(min, max, true)
 
 	circle.addEventListener('click', circleClick)	
 }
@@ -71,7 +71,7 @@ function randomLocation(randomSizes) {
 	let randomY = Math.round((height - randomSizes) * Math.random())
 	return [randomX, randomY]
 }
-function randomize(min, max) {
+function randomize(min, max, flag = false) {
 	let randomSizes = randomSize(min, max)
 	let arrLocation = randomLocation(randomSizes)
 	let randomX = arrLocation[0]
@@ -81,7 +81,9 @@ function randomize(min, max) {
 	top: ${randomY}px;
 	left: ${randomX}px;
 	`
-	board.append(circle)
+	if (flag) {
+		board.append(circle)
+	}
 }
 function finishGame() {
 	board.innerHTML = `
