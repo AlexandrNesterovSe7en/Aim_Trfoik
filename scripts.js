@@ -20,7 +20,7 @@ buttonStartGame.addEventListener('click', (event) =>{
 	screensArr.forEach((item) => item.style.transform = `translateY(${countVh}vh)`)
 }, {once: true})
 
-buttonTimer.addEventListener('click', initGame, {once: true})
+buttonTimer.addEventListener('click', initGame)
 
 function initGame(event) {
 	if (countVh != -200) {
@@ -29,6 +29,7 @@ function initGame(event) {
 	if (event.target.closest('.btn')) {
 		timeGame = parseInt(event.target.closest('.btn').dataset.time)
 		screensArr.forEach((item) => item.style.transform = `translateY(${countVh}vh)`)
+		buttonTimer.removeEventListener('click', initGame)
 		startGame()
 	}
 }
@@ -94,7 +95,7 @@ function finishGame() {
 	board.querySelector('h3').addEventListener('click', () => {
 		countVh = -100
 		board.innerHTML = ``
-		buttonTimer.addEventListener('click', initGame, {once: true})
+		buttonTimer.addEventListener('click', initGame)
 		screensArr.forEach((item) => item.style.transform = `translateY(${countVh}vh)`)
 	}, {once: true})
 }
