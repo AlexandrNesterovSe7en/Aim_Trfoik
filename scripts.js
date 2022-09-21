@@ -3,7 +3,7 @@ const screensArr = document.querySelectorAll('.screen')
 const buttonTimer = document.querySelector('.screen-container_btn')
 const board = document.querySelector('.board')
 const circle = document.createElement('img')
-circle.setAttribute('src', 'HED.png')
+circle.setAttribute('src', 'Новый проект.png')
 
 let timeGame = 0;
 let countVh = 0
